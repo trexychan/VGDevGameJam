@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
         mousePos = c.ScreenToWorldPoint(Input.mousePosition);
 
+        
+
     }
 
     void FixedUpdate()

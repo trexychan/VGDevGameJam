@@ -10,8 +10,10 @@ public class FireBreathing : MonoBehaviour
     public GameObject flamePrefab;
     public float maxSpread;
     public PlayerController player;
-    public int fuel;
-    public int maxFuel;
+    public float fuel;
+    public float dFuel;
+    public float maxFuel;
+    public float pow;
 
     public float flameForce = 10f;
     public float dT = 0.1f;
@@ -37,17 +39,26 @@ public class FireBreathing : MonoBehaviour
             GameObject flame = Instantiate(flamePrefab, breathStart.position, breathStart.rotation);
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
             rb.AddForce(dir * flameForce, ForceMode2D.Impulse);
-            Debug.Log(--fuel);
+            fuel -= Mathf.Pow(pow -= 0.1f, 1/2);
+            pow -= 0.1f;
+            if (pow <= 0)
+            {
+                pow = 0;
+            }
             dT += fireRateAcceleration;
-            yield return new WaitForSeconds(dT / 2);
+            yield return new WaitForSeconds(Mathf.Pow(dT / 2, 2));
         }
     }
-
     private IEnumerator CoolDown()
     {
+        if (fuel >= maxFuel)
+        {
+            fuel = maxFuel;
+        }
         while (fuel <= maxFuel)
         {
-            Debug.Log(fuel++);
+            
+            fuel = fuel + Mathf.Pow(pow += 0.1f, 2);
             dT -= fireRateAcceleration;
             yield return new WaitForSeconds(cooldownRate);
         }
@@ -75,4 +86,5 @@ public class FireBreathing : MonoBehaviour
         StartCoroutine("Breathe");
         StopCoroutine("CoolDown");
     }
+
 }

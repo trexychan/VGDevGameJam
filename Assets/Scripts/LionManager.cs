@@ -18,7 +18,7 @@ public class LionManager : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            LionSpawner.RemoveLion1(GetComponent<Lion1>());
         }
     }
 

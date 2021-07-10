@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class FireBreathing : MonoBehaviour
 {
-    /**
-     * 
-     */
+    
     public Transform breathStart;
     public float x, y, z;
     public GameObject flamePrefab;
@@ -16,14 +14,18 @@ public class FireBreathing : MonoBehaviour
     public int maxFuel;
 
     public float flameForce = 10f;
-    public float rate = 0.1f;
+    public float dT = 0.1f;
     public float cooldownRate = 0.3f;
+    public float fireRateAcceleration = 0.002f;
+
+    public float accelLevel;
 
     void Start()
     {
         x = breathStart.rotation.eulerAngles.x;
         y = breathStart.rotation.eulerAngles.y;
         z = breathStart.rotation.eulerAngles.z;
+        StartCoroutine("CoolDown");
     }
 
     private IEnumerator Breathe()
@@ -36,7 +38,8 @@ public class FireBreathing : MonoBehaviour
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
             rb.AddForce(dir * flameForce, ForceMode2D.Impulse);
             Debug.Log(--fuel);
-            yield return new WaitForSeconds(rate);
+            dT += fireRateAcceleration;
+            yield return new WaitForSeconds(dT / 2);
         }
     }
 
@@ -45,6 +48,7 @@ public class FireBreathing : MonoBehaviour
         while (fuel <= maxFuel)
         {
             Debug.Log(fuel++);
+            dT -= fireRateAcceleration;
             yield return new WaitForSeconds(cooldownRate);
         }
     }
@@ -63,6 +67,7 @@ public class FireBreathing : MonoBehaviour
             StartCoroutine("CoolDown");
             player.speed = 5f;
         }
+        
     }
 
     void ShootFire()

@@ -148,7 +148,7 @@ MonoBehaviour:
   maxSpread: 0.2
   player: {fileID: 4846496654505328571}
   fuel: 0
-  maxFuel: 0
+  maxFuel: 1000
   flameForce: 10
   dT: 0.1
   cooldownRate: 0.3

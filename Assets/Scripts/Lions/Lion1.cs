@@ -51,7 +51,7 @@ public class Lion1 : MonoBehaviour
         foreach (Collider2D hit in hits)
         {
             Lion1 other = hit.GetComponent<Lion1>();
-            if (other != null)
+            if (other != null && other.moveState == MoveState.Vibing)
             {
                 Vector3 dif = transform.position - other.transform.position;
                 if (dif.magnitude == 0)

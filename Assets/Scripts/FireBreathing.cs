@@ -25,7 +25,7 @@ public class FireBreathing : MonoBehaviour
         x = breathStart.rotation.eulerAngles.x;
         y = breathStart.rotation.eulerAngles.y;
         z = breathStart.rotation.eulerAngles.z;
-        StartCoroutine("CoolDown");
+        // StartCoroutine("CoolDown");
     }
 
     private IEnumerator Breathe()
@@ -75,6 +75,7 @@ public class FireBreathing : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && fuel > 0)
         {
+            CameraShake.Shake(0.1f, 2f);
             ShootFire();
             player.speed = 2.5f;
         }
@@ -89,7 +90,6 @@ public class FireBreathing : MonoBehaviour
 
     void ShootFire()
     {
-        CameraShake.Shake(0.1f,2f);
         StartCoroutine("Breathe");
         StopCoroutine("CoolDown");
     }

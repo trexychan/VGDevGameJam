@@ -236,9 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 103585061}
-  vibeAnchor: {fileID: 0}
+  vibeAnchor: {fileID: 564573510}
   vibeWidth: 16
   vibeHeight: 9
+  targetLionNumber: 10
   lion1Prefab: {fileID: 3174369176247197315, guid: 9f28ad5b2b5a6554c85d867b4b652aa0,
     type: 3}
   boidSettings: {fileID: 564573511}
@@ -268,14 +269,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5ed2f208bf7a842a62ff2f1045a57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  separationWeight: 1
-  alignmentWeight: 1
-  centerWeight: 1
-  boundaryWeight: 1
-  targetWeight: 1
-  speed: 4
-  rotationSpeed: 5
+  radius: 2
+  separationWeight: 0.2
+  alignmentWeight: 0
+  centerWeight: 0
+  boundaryWeight: 2
+  avoidTargetWeight: 5
+  speed: 3
+  rotationSpeed: 3
+  distUntilAttack: 4
+  acceleration: 1
 --- !u!1 &702446011
 GameObject:
   m_ObjectHideFlags: 0

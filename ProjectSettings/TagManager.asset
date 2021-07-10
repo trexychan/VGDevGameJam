@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Lion
+  - Structure
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - Lion
-  - 
+  - Structure
   - 
   - 
   - 
@@ -40,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 414566413
+    locked: 0
+  - name: PG
+    uniqueID: 373008047
+    locked: 0
+  - name: FG
+    uniqueID: 3459348617
     locked: 0

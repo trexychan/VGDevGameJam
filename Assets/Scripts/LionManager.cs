@@ -26,8 +26,11 @@ public class LionManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Flame flame = collider.GetComponent<Flame>();
-        Debug.Log("LION HIT BY FIRE");
-        StartCoroutine(BurnLion());
+        if (flame != null)
+        {
+            Debug.Log("LION HIT BY FIRE");
+            StartCoroutine(BurnLion());
+        }
     }
 
     private IEnumerator BurnLion()

@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 373008047
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6977066255321468087, guid: 29d2b69eeb2709f4ca075a6ccab3cdd9,
     type: 3}
@@ -148,12 +148,13 @@ MonoBehaviour:
   maxSpread: 0.2
   player: {fileID: 4846496654505328571}
   fuel: 0
-  maxFuel: 0
+  dFuel: 0
+  maxFuel: 1000
+  pow: 0
   flameForce: 10
   dT: 0.1
   cooldownRate: 0.3
   fireRateAcceleration: 0.002
-  accelLevel: 0
 --- !u!114 &3037274529579684241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4846496654611166004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4846496654505328573}

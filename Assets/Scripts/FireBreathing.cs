@@ -10,22 +10,22 @@ public class FireBreathing : MonoBehaviour
     public GameObject flamePrefab;
     public float maxSpread;
     public PlayerController player;
-    public int fuel;
-    public int maxFuel;
+    public float fuel;
+    public float dFuel;
+    public float maxFuel;
+    public float pow;
 
     public float flameForce = 10f;
     public float dT = 0.1f;
     public float cooldownRate = 0.3f;
     public float fireRateAcceleration = 0.002f;
 
-    public float accelLevel;
-
     void Start()
     {
         x = breathStart.rotation.eulerAngles.x;
         y = breathStart.rotation.eulerAngles.y;
         z = breathStart.rotation.eulerAngles.z;
-        StartCoroutine("CoolDown");
+        // StartCoroutine("CoolDown");
     }
 
     private IEnumerator Breathe()
@@ -36,21 +36,38 @@ public class FireBreathing : MonoBehaviour
             Vector2 dir = breathStart.up + new Vector3(Random.Range(-maxSpread, maxSpread), Random.Range(-maxSpread, maxSpread), 0);
             GameObject flame = Instantiate(flamePrefab, breathStart.position, breathStart.rotation);
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
+            StartCoroutine(WaitToDespawnFlames(rb, flame));
             rb.AddForce(dir * flameForce, ForceMode2D.Impulse);
-            Debug.Log(--fuel);
+            fuel -= Mathf.Pow(pow -= 0.1f, 1/2);
+            pow -= 0.1f;
+            if (pow <= 0)
+            {
+                pow = 0;
+            }
             dT += fireRateAcceleration;
-            yield return new WaitForSeconds(dT / 2);
+            yield return new WaitForSeconds(Mathf.Pow(dT / 2, 2));
         }
     }
-
     private IEnumerator CoolDown()
     {
+        if (fuel >= maxFuel)
+        {
+            fuel = maxFuel;
+        }
         while (fuel <= maxFuel)
         {
-            Debug.Log(fuel++);
+            
+            fuel = fuel + Mathf.Pow(pow += 0.1f, 2);
             dT -= fireRateAcceleration;
             yield return new WaitForSeconds(cooldownRate);
         }
+    }
+
+    private IEnumerator WaitToDespawnFlames(Rigidbody2D rb, GameObject flame)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(rb);
+        Destroy(flame);
     }
 
     // Update is called once per frame
@@ -58,6 +75,7 @@ public class FireBreathing : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && fuel > 0)
         {
+            CameraShake.Shake(0.1f, 2f);
             ShootFire();
             player.speed = 2.5f;
         }
@@ -67,7 +85,7 @@ public class FireBreathing : MonoBehaviour
             StartCoroutine("CoolDown");
             player.speed = 5f;
         }
-        
+
     }
 
     void ShootFire()
@@ -75,4 +93,5 @@ public class FireBreathing : MonoBehaviour
         StartCoroutine("Breathe");
         StopCoroutine("CoolDown");
     }
+
 }

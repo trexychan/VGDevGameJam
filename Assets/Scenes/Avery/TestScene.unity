@@ -291,9 +291,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breathStart: {fileID: 717794406}
+  x: 0
+  y: 0
+  z: 0
   flamePrefab: {fileID: 3464786328381622575, guid: aaf1d88f45d858b4497da68badc4a25e,
     type: 3}
+  maxSpread: 0.2
   flameForce: 10
+  i: 0
+  rate: 0.1
 --- !u!1 &1285408212
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,3 +397,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 756523244}
+--- !u!1 &2097167080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097167082}
+  - component: {fileID: 2097167081}
+  m_Layer: 0
+  m_Name: LionWaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2097167081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097167080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafb0befc0bf09d41805f061309d71f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2097167082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097167080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23181452, y: 0.3497888, z: -1.0181409}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6795155171474880316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3497888
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049563597921303897, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981173393695949730, guid: be30b2841cb270d41acce2e089ce4434,
+        type: 3}
+      propertyPath: m_Name
+      value: Lion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be30b2841cb270d41acce2e089ce4434, type: 3}

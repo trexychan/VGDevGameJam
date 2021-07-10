@@ -297,6 +297,7 @@ MonoBehaviour:
   flamePrefab: {fileID: 3464786328381622575, guid: aaf1d88f45d858b4497da68badc4a25e,
     type: 3}
   maxSpread: 0.2
+  player: {fileID: 756523242}
   flameForce: 10
   i: 0
   rate: 0.1

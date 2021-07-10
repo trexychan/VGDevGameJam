@@ -11,6 +11,7 @@ public class FireBreathing : MonoBehaviour
     public float x, y, z;
     public GameObject flamePrefab;
     public float maxSpread;
+    public PlayerController player;
 
     public float flameForce = 10f;
     public int i = 0;
@@ -43,10 +44,12 @@ public class FireBreathing : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ShootFire();
+            player.speed = 2.5f;
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine("Breathe");
+            player.speed = 5f;
         }
     }
 

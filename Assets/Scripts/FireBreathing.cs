@@ -20,8 +20,6 @@ public class FireBreathing : MonoBehaviour
     public float cooldownRate = 0.3f;
     public float fireRateAcceleration = 0.002f;
 
-    public float accelLevel;
-
     void Start()
     {
         x = breathStart.rotation.eulerAngles.x;
@@ -38,6 +36,7 @@ public class FireBreathing : MonoBehaviour
             Vector2 dir = breathStart.up + new Vector3(Random.Range(-maxSpread, maxSpread), Random.Range(-maxSpread, maxSpread), 0);
             GameObject flame = Instantiate(flamePrefab, breathStart.position, breathStart.rotation);
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
+            StartCoroutine(WaitToDespawnFlames(rb, flame));
             rb.AddForce(dir * flameForce, ForceMode2D.Impulse);
             fuel -= Mathf.Pow(pow -= 0.1f, 1/2);
             pow -= 0.1f;
@@ -64,6 +63,13 @@ public class FireBreathing : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitToDespawnFlames(Rigidbody2D rb, GameObject flame)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(rb);
+        Destroy(flame);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -78,7 +84,7 @@ public class FireBreathing : MonoBehaviour
             StartCoroutine("CoolDown");
             player.speed = 5f;
         }
-        
+
     }
 
     void ShootFire()

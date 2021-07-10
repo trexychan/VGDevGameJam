@@ -46,12 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3caa3c0b99ba314cbb77c887ffcb6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  separationWeight: 100
-  alignmentWeight: 0
-  speed: 4
-  rotationSpeed: 0.2
-  angle: 0
+  boidSettings: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+  spriteRenderer: {fileID: 3174369176569836649}
 --- !u!50 &-2534895153075122019
 Rigidbody2D:
   serializedVersion: 4

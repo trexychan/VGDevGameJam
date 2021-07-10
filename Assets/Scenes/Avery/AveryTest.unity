@@ -148,18 +148,8 @@ PrefabInstance:
       objectReference: {fileID: 2072375458}
     - target: {fileID: 4846496654505328572, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
-      propertyPath: fuel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846496654505328572, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
-        type: 3}
-      propertyPath: dFuel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846496654505328572, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
-        type: 3}
       propertyPath: maxFuel
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4846496654505328573, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}

@@ -20,6 +20,8 @@ public class LionSpawner : MonoBehaviour
     public GameObject lion1Prefab;
     public BoidSettings boidSettings;
 
+    public GameObject lionNPrefab;
+
     private static LionSpawner _instance;
 
     void Awake()
@@ -38,6 +40,7 @@ public class LionSpawner : MonoBehaviour
         //}
 
         StartCoroutine(SetLionSeekers());
+        StartCoroutine(SetLionStructures());
     }
 
     void Update()
@@ -131,13 +134,33 @@ public class LionSpawner : MonoBehaviour
                                                                              // also its not even right bc this is % per frame not total #
             if (Random.Range(0, 100) < targetNum && activeLion1.Count > 0)
             {
+                Lion1 randomLion = activeLion1[Random.Range(0, activeLion1.Count)];
+                if (randomLion.moveState == Lion1.MoveState.Vibing)
+                {
+                    GameObject lionN = Instantiate(lionNPrefab, randomLion.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360))));
+                    lionN.GetComponent<LionN>().AddLion(randomLion);
+                }
+            }
+
+            yield return new WaitForSeconds(0.09f);
+        }
+    }
+
+
+    private IEnumerator SetLionStructures()
+    {
+        while (true)
+        {
+            float targetNum = 3 * Mathf.Log10(currentLionNumber + 10) - 10; // this only changes on currentLionNumber change
+                                                                             // also its not even right bc this is % per frame not total #
+            if (Random.Range(0, 100) < targetNum && activeLion1.Count > 0)
+            {
                 activeLion1[Random.Range(0, activeLion1.Count)].StartSeeking();
             }
 
             yield return new WaitForSeconds(0.1f);
         }
     }
-
 
 
     private void OnDrawGizmos()

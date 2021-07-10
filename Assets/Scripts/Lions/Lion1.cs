@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lion1 : MonoBehaviour
 {
-    private MoveState moveState = MoveState.Vibing;
+    public MoveState moveState = MoveState.Vibing;
 
     public BoidSettings boidSettings;
     public Vector3 direction = Vector3.zero;
@@ -16,7 +16,7 @@ public class Lion1 : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-    enum MoveState
+    public enum MoveState
     {
         Seeking,
         Vibing,

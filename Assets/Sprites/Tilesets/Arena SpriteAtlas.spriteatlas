@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Arena SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+    totalSpriteSurfaceArea: 1216
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -4185112244945942921, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 6691609207867864533, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 8560510436036205156, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -7877309797519986192, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -5786611391818717952, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -6908281186290444707, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -5664102207088293727, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 2383439143013713111, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -8424962383257148188, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -4950101377434438795, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 9053932522525767856, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 3619476116279145771, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 726460305331466014, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 5532242742169007216, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 8770592757926923394, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 7140089266233192977, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 251472325655232727, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: 8094813698950427789, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  - {fileID: -5658840643373072671, guid: a3161e1a603b56844953b69eba73d753, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - arena_tileset_0
+  - arena_tileset_1
+  - arena_tileset_2
+  - arena_tileset_3
+  - arena_tileset_4
+  - arena_tileset_5
+  - arena_tileset_6
+  - arena_tileset_7
+  - arena_tileset_8
+  - arena_tileset_9
+  - arena_tileset_13
+  - arena_tileset_12
+  - arena_tileset_11
+  - arena_tileset_10
+  - arena_tileset_17
+  - arena_tileset_16
+  - arena_tileset_15
+  - arena_tileset_14
+  - arena_tileset_18
+  m_RenderDataMap: {}
+  m_Tag: Arena SpriteAtlas
+  m_IsVariant: 0

@@ -89,6 +89,7 @@ public class FireBreathing : MonoBehaviour
 
     void ShootFire()
     {
+        CameraShake.Shake(0.1f,2f);
         StartCoroutine("Breathe");
         StopCoroutine("CoolDown");
     }

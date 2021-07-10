@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8420478618104592707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8420478618104592705}
+  - component: {fileID: 8420478618104592706}
+  - component: {fileID: 8420478618104592704}
+  m_Layer: 0
+  m_Name: LionSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8420478618104592705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420478618104592707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8420478618104592706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420478618104592707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfb4ee3848913b4cb213108907bdf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  vibeAnchor: {fileID: 8420478618104592705}
+  vibeWidth: 16
+  vibeHeight: 9
+  targetLionNumber: 10
+  lion1Prefab: {fileID: 3174369176247197315, guid: 9f28ad5b2b5a6554c85d867b4b652aa0,
+    type: 3}
+  boidSettings: {fileID: 8420478618104592704}
+--- !u!114 &8420478618104592704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420478618104592707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5ed2f208bf7a842a62ff2f1045a57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  separationWeight: 0.2
+  alignmentWeight: 0
+  centerWeight: 0
+  boundaryWeight: 2
+  avoidTargetWeight: 5
+  speed: 3
+  rotationSpeed: 3
+  distUntilAttack: 4
+  acceleration: 1

@@ -8,7 +8,7 @@ public class BoidSettings : MonoBehaviour
 
     public float separationWeight = 1;
     public float alignmentWeight = 1;
-    public float centerWeight = 1; // center does not work
+    public float structureWeight = 1; // center does not work
     public float boundaryWeight = 1;
     public float avoidTargetWeight = 1;
 

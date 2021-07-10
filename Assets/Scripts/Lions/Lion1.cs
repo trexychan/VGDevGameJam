@@ -20,6 +20,7 @@ public class Lion1 : MonoBehaviour
     {
         Seeking,
         Vibing,
+        Structure,
     }
 
     public void Start()
@@ -45,7 +46,7 @@ public class Lion1 : MonoBehaviour
 
         Vector3 separationVector = Vector3.zero;
         Vector3 alignmenetVector = Vector3.zero;
-        Vector3 centerVector = Vector3.zero;
+        Vector3 structureVector = Vector3.zero;
 
         foreach (Collider2D hit in hits)
         {
@@ -58,6 +59,18 @@ public class Lion1 : MonoBehaviour
                 separationVector += dif * (boidSettings.radius / dif.sqrMagnitude);
                 alignmenetVector += other.direction;
                 //centerVector += other.transform.position;
+            }
+        }
+        
+        Collider2D[] structureHits = Physics2D.OverlapCircleAll(transform.position, boidSettings.radius, LayerMask.GetMask("Structure")); // no view cone
+
+        foreach (Collider2D hit in structureHits)
+        {
+            LionStructure other = hit.GetComponent<LionStructure>();
+            if (other != null && !other.isComplete)
+            {
+                Vector3 dir = other.transform.position - transform.position;
+                structureVector += dir;
             }
         }
 
@@ -93,7 +106,7 @@ public class Lion1 : MonoBehaviour
         newDirection = Vector3.zero;
         newDirection += separationVector * boidSettings.separationWeight;
         newDirection += alignmenetVector * boidSettings.alignmentWeight;
-        newDirection += centerVector * boidSettings.centerWeight;
+        newDirection += structureVector * boidSettings.structureWeight;
 
         newDirection += avoidTargetVector * boidSettings.avoidTargetWeight;
         newDirection += boundaryVector * boidSettings.boundaryWeight;

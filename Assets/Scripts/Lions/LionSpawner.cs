@@ -15,6 +15,7 @@ public class LionSpawner : MonoBehaviour
     private static List<Lion1> activeLion1 = new List<Lion1>();
     private static List<Lion1> inactiveLion1 = new List<Lion1>();
 
+    private static int totalKills = 0;
 
     public GameObject lion1Prefab;
     public BoidSettings boidSettings;
@@ -69,6 +70,10 @@ public class LionSpawner : MonoBehaviour
         return _instance.vibeAnchor.transform.position.x + (_instance.vibeWidth / 2);
     }
 
+    public static int GetScore()
+    {
+        return totalKills;
+    }
 
     private IEnumerator SpawnLion1()
     {
@@ -103,6 +108,7 @@ public class LionSpawner : MonoBehaviour
     public static void RemoveLion1(Lion1 lion)
     {
         currentLionNumber -= 1;
+        totalKills += 1;
 
         if (activeLion1.Contains(lion))
         {

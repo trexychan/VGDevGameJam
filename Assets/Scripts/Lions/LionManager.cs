@@ -17,11 +17,11 @@ public class LionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (alive && health <= 0)
-        {
-            alive = false;
-            LionSpawner.RemoveLion1(GetComponent<Lion1>());
-        }
+        //if (alive && health <= 0)
+        //{
+        //    alive = false;
+        //    LionSpawner.RemoveLion1(GetComponent<Lion1>());
+        //}
     }
 
     // Deplete health until 0 then despawn
@@ -30,16 +30,19 @@ public class LionManager : MonoBehaviour
         Flame flame = collider.GetComponent<Flame>();
         if (alive && flame != null)
         {
-            Debug.Log("LION HIT BY FIRE");
+            //Debug.Log("LION HIT BY FIRE");
+            flame.RemovePierce();
             StartCoroutine(BurnLion());
         }
     }
 
     private IEnumerator BurnLion()
     {
-        yield return new WaitForSeconds(2f);
-        TakeDamage(1000);
-        Debug.Log("KILL LION");
+        //TakeDamage(1000);
+        yield return null;
+        LionSpawner.RemoveLion1(GetComponent<Lion1>());
+        //yield return new WaitForSeconds(1f);
+        //Debug.Log("KILL LION");
     }
 
     public void TakeDamage(int amount)

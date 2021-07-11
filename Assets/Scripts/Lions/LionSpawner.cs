@@ -11,6 +11,8 @@ public class LionSpawner : MonoBehaviour
     public float vibeHeight;
 
     public float targetLionNumber = 10;
+    public float targetIncreaseRate = 0.5f;
+    public float targetAccelerationRate = 0.1f;
     private static float currentLionNumber = 0;
     private static List<Lion1> activeLion1 = new List<Lion1>();
     private static List<Lion1> inactiveLion1 = new List<Lion1>();
@@ -49,7 +51,8 @@ public class LionSpawner : MonoBehaviour
 
     void Update()
     {
-        targetLionNumber += Time.deltaTime / 5;
+        targetIncreaseRate += targetAccelerationRate * Time.deltaTime;
+        targetLionNumber += targetIncreaseRate * Time.deltaTime;
 
         if (currentLionNumber < targetLionNumber)
         {
@@ -130,7 +133,15 @@ public class LionSpawner : MonoBehaviour
         {
             currentLionNumber -= 1;
         }
+        else
+        {
+            if (lion.transform.parent != null && lion.transform.parent.GetComponent<LionStructure>() != null)
+            {
+                lion.transform.parent.GetComponent<LionStructure>().RemoveDeletedLion(lion);
+            }
+        }
         totalKills += 1;
+        lion.moveState = Lion1.MoveState.Vibing;
 
         if (activeLion1.Contains(lion))
         {
@@ -179,7 +190,7 @@ public class LionSpawner : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(0.09f);
+            yield return new WaitForSeconds(0.06f);
         }
     }
 
@@ -188,11 +199,13 @@ public class LionSpawner : MonoBehaviour
     {
         while (true)
         {
-            float targetNum = 3 * Mathf.Log10(currentLionNumber + 10) - 10; // this only changes on currentLionNumber change
+            float targetNum = 7 * Mathf.Log10(currentLionNumber + 10) - 10; // this only changes on currentLionNumber change
                                                                              // also its not even right bc this is % per frame not total #
             if (Random.Range(0, 100) < targetNum && activeLion1.Count > 0)
             {
-                activeLion1[Random.Range(0, activeLion1.Count)].StartSeeking();
+                Lion1 randomLion = activeLion1[Random.Range(0, activeLion1.Count)];
+                if (randomLion.moveState == Lion1.MoveState.Vibing)
+                    randomLion.StartSeeking();
             }
 
             yield return new WaitForSeconds(0.1f);

@@ -122,15 +122,6 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
   m_Radius: 0.366225
 --- !u!95 &5330783537455995726
@@ -164,3 +155,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a957ee5b92f5b6418afdc4d2ec772ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pierceCount: 3

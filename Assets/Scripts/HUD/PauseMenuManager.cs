@@ -65,6 +65,7 @@ public class PauseMenuManager : MonoBehaviour
     public void QuitToMainMenu()
     {
         print("quit to main menu");
+        GameStatics.GoToMainMenu();
     }
 
     public void OnMasterVolumeChanged(float newVolume)

@@ -119,6 +119,15 @@ public class Lion1 : MonoBehaviour
         StartCoroutine(SeekTarget());
     }
 
+    public void SetStructure()
+    {
+        if (moveState != MoveState.Structure)
+        {
+            moveState = MoveState.Structure;
+            LionSpawner.RemoveCurrentLionCount(1);
+        }
+    }
+
     private IEnumerator SeekTarget()
     {
         moveState = MoveState.Seeking;

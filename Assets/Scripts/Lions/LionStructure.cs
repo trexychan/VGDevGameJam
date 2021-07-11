@@ -9,8 +9,9 @@ public class LionStructure : MonoBehaviour
     public int currentLions = 0;
 
     public List<Transform> lionPositionsRemaining = new List<Transform>();
+    public List<Transform> extraLionPositions = new List<Transform>();
 
-    private List<Lion1> lions = new List<Lion1>();
+    protected List<Lion1> lions = new List<Lion1>();
     public Collider2D hitbox;
 
 
@@ -22,15 +23,16 @@ public class LionStructure : MonoBehaviour
     protected void AddToPosition(Vector3 pos)
     {
         transform.position += pos;
-        foreach (Lion1 l1 in lions)
-        {
-            l1.transform.position += pos;
-        }
+        //foreach (Lion1 l1 in lions)
+        //{
+        //    l1.transform.position += pos;
+        //}
     }
 
     private void RemoveLion(Lion1 lion)
     {
         lions.Remove(lion);
+        lion.transform.parent = transform.parent;
         LionSpawner.RemoveLion1(lion);
         currentLions -= 1;
 
@@ -51,7 +53,7 @@ public class LionStructure : MonoBehaviour
 
     public void AddLion(Lion1 lion)
     {
-        if (lions.Contains(lion))
+        if (lions.Contains(lion) || (lionPositionsRemaining.Count == 0 && extraLionPositions.Count == 0))
         {
             return;
         }
@@ -71,26 +73,38 @@ public class LionStructure : MonoBehaviour
                 isComplete = true;
             }
         }
-        else if (lionsNeeded >= lionsNeeded - 2)
+        else if (currentLions - extraLionPositions.Count >= lionsNeeded - 2)
         {
             isComplete = true;
         }
 
         lions.Add(lion);
-
-        lion.moveState = Lion1.MoveState.Structure;
-        int ind = Random.Range(0, lionPositionsRemaining.Count);
-        Transform t = lionPositionsRemaining[ind];
-        lionPositionsRemaining.RemoveAt(ind);
+        lion.transform.parent = transform;
+        
+        lion.SetStructure();
+        Transform t = null;
+        if (lionPositionsRemaining.Count > 0)
+        {
+            int ind = Random.Range(0, lionPositionsRemaining.Count);
+            t = lionPositionsRemaining[ind];
+            lionPositionsRemaining.RemoveAt(ind);
+        }
+        else
+        {
+            int ind = Random.Range(0, extraLionPositions.Count);
+            t = extraLionPositions[ind];
+            extraLionPositions.RemoveAt(ind);
+        }
         lion.transform.position = t.position;
         lion.transform.rotation = t.rotation;
         lion.spriteRenderer.color = Color.blue;
     }
 
-    private void DestroyStructure()
+    protected void DestroyStructure()
     {
         foreach (Lion1 l1 in lions)
         {
+            l1.transform.parent = transform.parent;
             LionSpawner.RemoveLion1(l1);
         }
 
@@ -123,7 +137,7 @@ public class LionStructure : MonoBehaviour
     //    }
     //}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collided!");
         if (!isComplete && collision.gameObject.tag == "Lion")

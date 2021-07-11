@@ -52,6 +52,16 @@ MonoBehaviour:
   lion1Prefab: {fileID: 3174369176247197315, guid: 9f28ad5b2b5a6554c85d867b4b652aa0,
     type: 3}
   boidSettings: {fileID: 8420478618104592704}
+  lion2Prefab: {fileID: 94019208289172081, guid: 0a8025c41a8e33c4e96d3e4f0047e5a8,
+    type: 3}
+  lion3Prefab: {fileID: 1372244896139745192, guid: e6cf98cdf59dfb840af158bb23f99830,
+    type: 3}
+  lionStarPrefab: {fileID: 979014446588966032, guid: 90839dff8fe6efd4789d5bbd49c5794f,
+    type: 3}
+  lionGunPrefab: {fileID: 5497445568233483551, guid: 590880d4b62cde849b36b1280da2dfa0,
+    type: 3}
+  lionBombPrefab: {fileID: 6833628678716251997, guid: c94de7ebccaa1f147b272a052f581241,
+    type: 3}
 --- !u!114 &8420478618104592704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +77,7 @@ MonoBehaviour:
   radius: 2
   separationWeight: 0.2
   alignmentWeight: 0
-  centerWeight: 0
+  structureWeight: 1
   boundaryWeight: 2
   avoidTargetWeight: 5
   speed: 3

@@ -6,6 +6,7 @@ public class LionManager : MonoBehaviour
 {
     public int health;
     public SpriteRenderer spriteRenderer;
+    public GameObject steakParticles;
     public bool alive = true;
 
     // Start is called before the first frame update
@@ -39,6 +40,7 @@ public class LionManager : MonoBehaviour
     private IEnumerator BurnLion()
     {
         //TakeDamage(1000);
+        Destroy(Instantiate(steakParticles, transform.position, transform.rotation), 2);
         yield return null;
         LionSpawner.RemoveLion1(GetComponent<Lion1>());
         //yield return new WaitForSeconds(1f);

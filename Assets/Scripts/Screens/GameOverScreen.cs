@@ -11,6 +11,7 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         score = LionSpawner.GetScore();
+        Debug.Log("This is the score: " + score);
         scoreText.text = "Score: " + score.ToString();
     }
     public void RestartButton()

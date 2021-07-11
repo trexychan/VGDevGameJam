@@ -5784,6 +5784,12 @@ PrefabInstance:
       propertyPath: gameOverScreenRoot
       value: 
       objectReference: {fileID: 1644150086}
+    - target: {fileID: 3037274529579684241, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
+        type: 3}
+      propertyPath: gameOverScreenPrefab
+      value: 
+      objectReference: {fileID: 5916150191447619957, guid: 24d140dc3e164b2418ca0ea3e82dd568,
+        type: 3}
     - target: {fileID: 4846496654505328569, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
       propertyPath: m_Name
@@ -31763,12 +31769,12 @@ PrefabInstance:
     - target: {fileID: 6887955044283297624, guid: ad0243d0798cb1b408e734f295bbfb12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 57.5
       objectReference: {fileID: 0}
     - target: {fileID: 6887955044283297624, guid: ad0243d0798cb1b408e734f295bbfb12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 6887955044283297624, guid: ad0243d0798cb1b408e734f295bbfb12,
         type: 3}

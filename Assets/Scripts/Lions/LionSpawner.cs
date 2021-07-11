@@ -20,7 +20,11 @@ public class LionSpawner : MonoBehaviour
     public GameObject lion1Prefab;
     public BoidSettings boidSettings;
 
-    public GameObject lionNPrefab;
+    public GameObject lion2Prefab;
+    public GameObject lion3Prefab;
+    public GameObject lionStarPrefab;
+    public GameObject lionGunPrefab;
+    public GameObject lionBombPrefab;
 
     private static LionSpawner _instance;
 
@@ -89,9 +93,20 @@ public class LionSpawner : MonoBehaviour
         if (inactiveLion1.Count > 0)
         {
             l1 = inactiveLion1[inactiveLion1.Count - 1];
-            l = l1.gameObject;
-            l.SetActive(true);
-            inactiveLion1.RemoveAt(inactiveLion1.Count - 1);
+            if (l1 != null)
+            {
+                l = l1.gameObject;
+                l.SetActive(true);
+                inactiveLion1.RemoveAt(inactiveLion1.Count - 1);
+                l1.spriteRenderer.color = Color.white;
+            }
+            else
+            {
+                Debug.LogError("Destroyed Lion in the inactive pool!!!!");
+                l = Instantiate(lion1Prefab);
+                l1 = l.GetComponent<Lion1>();
+                l1.boidSettings = boidSettings;
+            }
         }
         else
         {
@@ -110,7 +125,10 @@ public class LionSpawner : MonoBehaviour
 
     public static void RemoveLion1(Lion1 lion)
     {
-        currentLionNumber -= 1;
+        if (lion.moveState != Lion1.MoveState.Structure)
+        {
+            currentLionNumber -= 1;
+        }
         totalKills += 1;
 
         if (activeLion1.Contains(lion))
@@ -126,7 +144,17 @@ public class LionSpawner : MonoBehaviour
         inactiveLion1.Add(lion);
     }
 
-    private IEnumerator SetLionSeekers()
+    public static void RemoveCurrentLionCount(int amount)
+    {
+        currentLionNumber -= amount;
+    }
+
+    public static void AddLionKill(int amount)
+    {
+        totalKills += amount;
+    }
+
+    private IEnumerator SetLionStructures()
     {
         while (true)
         {
@@ -137,8 +165,16 @@ public class LionSpawner : MonoBehaviour
                 Lion1 randomLion = activeLion1[Random.Range(0, activeLion1.Count)];
                 if (randomLion.moveState == Lion1.MoveState.Vibing)
                 {
-                    GameObject lionN = Instantiate(lionNPrefab, randomLion.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360))));
-                    lionN.GetComponent<LionN>().AddLion(randomLion);
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        GameObject lionN = Instantiate(lion2Prefab, randomLion.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360))));
+                        lionN.GetComponent<LionN>().AddLion(randomLion);
+                    }
+                    else
+                    {
+                        GameObject lionN = Instantiate(lion3Prefab, randomLion.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360))));
+                        lionN.GetComponent<LionN>().AddLion(randomLion);
+                    }
                 }
             }
 
@@ -147,7 +183,7 @@ public class LionSpawner : MonoBehaviour
     }
 
 
-    private IEnumerator SetLionStructures()
+    private IEnumerator SetLionSeekers()
     {
         while (true)
         {
@@ -160,6 +196,24 @@ public class LionSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public static LionStructure CreateRandomEmptyLionStructure(LionN ln1)
+    {
+        GameObject lsObj = null;
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                lsObj = Instantiate(_instance.lionStarPrefab, ln1.transform.position, ln1.transform.rotation);
+                break;
+            case 1:
+                lsObj = Instantiate(_instance.lionGunPrefab, ln1.transform.position, ln1.transform.rotation);
+                break;
+            case 2:
+                lsObj = Instantiate(_instance.lionBombPrefab, ln1.transform.position, ln1.transform.rotation);
+                break;
+        }
+        return lsObj.GetComponent<LionStructure>();
     }
 
 

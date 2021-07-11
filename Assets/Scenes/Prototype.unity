@@ -6089,6 +6089,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7144735712082359244, guid: fb3ffa3ad9487d747bc25da5e7387943,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -127.47
+      objectReference: {fileID: 0}
     - target: {fileID: 7144735712144389019, guid: fb3ffa3ad9487d747bc25da5e7387943,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6134,11 +6139,21 @@ PrefabInstance:
       propertyPath: dragon
       value: 
       objectReference: {fileID: 291067066}
+    - target: {fileID: 7144735713148486519, guid: fb3ffa3ad9487d747bc25da5e7387943,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7144735713374122489, guid: fb3ffa3ad9487d747bc25da5e7387943,
         type: 3}
       propertyPath: fireBreathing
       value: 
       objectReference: {fileID: 291067067}
+    - target: {fileID: 7144735713374122490, guid: fb3ffa3ad9487d747bc25da5e7387943,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 139.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7144735713466363723, guid: fb3ffa3ad9487d747bc25da5e7387943,
         type: 3}
       propertyPath: m_AnchorMax.y

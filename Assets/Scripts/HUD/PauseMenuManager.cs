@@ -26,7 +26,7 @@ public class PauseMenuManager : MonoBehaviour
 
     void Update()
     {
-        print("Update");
+        //print("Update");
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Pause) || Input.GetKeyDown(KeyCode.P))
         {
             print("pause");

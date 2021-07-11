@@ -55,8 +55,14 @@ public class LionStructure : MonoBehaviour
 
         if (!isComplete)
         {
-            lionsNeeded += 1;
-            lionPositionsRemaining.Add(lion.transform);
+            //foreach (Lion1 l1 in lions)
+            //{
+            //    l1.SetVibing();
+            //    l1.transform.parent = transform.parent;
+
+            //    Destroy(gameObject);
+            //}
+            DestroyStructure();
         }
         else
         {
@@ -76,8 +82,15 @@ public class LionStructure : MonoBehaviour
 
         if (!isComplete)
         {
-            lionsNeeded += 1;
-            lionPositionsRemaining.Add(lion.transform);
+            //lionPositionsRemaining.Add(lion.transform);
+            //foreach (Lion1 l1 in lions)
+            //{
+            //    l1.SetVibing();
+            //    l1.transform.parent = transform.parent;
+
+            //    Destroy(gameObject);
+            //}
+            DestroyStructure();
         }
         else
         {

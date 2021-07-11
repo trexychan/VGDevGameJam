@@ -288,7 +288,6 @@ MonoBehaviour:
   dT: 0.1
   cooldownRate: 0.3
   fireRateAcceleration: 0.002
-  breathingAudio: {fileID: 0}
 --- !u!114 &3037274529579684241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,8 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   vulnerableRadius: 1
-  damagePerLionPerFrame: 0.1
-  damagePerLionBulletPerFrame: 0.2
+  damagePerLionPerFrame: 0.05
+  damagePerLionBulletPerFrame: 0.1
   gameOverScreenPrefab: {fileID: 4537121884075511566, guid: 24d140dc3e164b2418ca0ea3e82dd568,
     type: 3}
   gameOverScreenRoot: {fileID: 0}

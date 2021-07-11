@@ -11,7 +11,9 @@ public class LionSpawner : MonoBehaviour
     public float vibeHeight;
 
     public float targetLionNumber = 10;
+    private float baseTargetLionNumber;
     public float targetIncreaseRate = 0.5f;
+    private float baseTargetIncreaseRate;
     public float targetAccelerationRate = 0.1f;
     private static float currentLionNumber = 0;
     private static List<Lion1> activeLion1 = new List<Lion1>();
@@ -34,6 +36,9 @@ public class LionSpawner : MonoBehaviour
     {
         // lazy
         _instance = this;
+
+        baseTargetLionNumber = targetLionNumber;
+        baseTargetIncreaseRate = targetIncreaseRate;
     }
 
     private void Start()
@@ -59,6 +64,15 @@ public class LionSpawner : MonoBehaviour
             StartCoroutine(SpawnLion1());
         }
         
+    }
+
+    public static void RestartLions()
+    {
+        activeLion1.Clear();
+        inactiveLion1.Clear();
+        totalKills = 0;
+        _instance.targetLionNumber = _instance.baseTargetLionNumber;
+        _instance.targetIncreaseRate = _instance.baseTargetIncreaseRate;
     }
 
     public static LionSpawner GetInstance()
@@ -102,6 +116,7 @@ public class LionSpawner : MonoBehaviour
                 l.SetActive(true);
                 inactiveLion1.RemoveAt(inactiveLion1.Count - 1);
                 l1.animator.runtimeAnimatorController = l1.animatorControllersList[0];
+                l1.transform.parent = transform.parent;
                 // l1.spriteRenderer.color = Color.white;
             }
             else

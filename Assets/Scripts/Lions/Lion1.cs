@@ -137,6 +137,15 @@ public class Lion1 : MonoBehaviour
         }
     }
 
+    public void SetVibing()
+    {
+        if (moveState != MoveState.Vibing)
+        {
+            moveState = MoveState.Vibing;
+            animator.runtimeAnimatorController = animatorControllersList[0];
+        }
+    }
+
     private IEnumerator SeekTarget()
     {
         moveState = MoveState.Seeking;

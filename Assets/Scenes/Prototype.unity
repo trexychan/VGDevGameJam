@@ -267,10 +267,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d205203e3a7ca74bbfeb86ea3c71bc1, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0.793
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6008,6 +6008,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2958868628724759732, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb25a7af143d7dd4199d76a6d8e2a15c, type: 3}
     - target: {fileID: 3037274529579684241, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
       propertyPath: gameOverScreenRoot
@@ -6017,6 +6022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverScreenPrefab
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910333511498174554, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
+        type: 3}
+      propertyPath: m_Name
+      value: Roar
       objectReference: {fileID: 0}
     - target: {fileID: 4846496654505328569, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
@@ -6033,6 +6043,11 @@ PrefabInstance:
       propertyPath: c
       value: 
       objectReference: {fileID: 2072375458}
+    - target: {fileID: 4846496654505328571, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
+        type: 3}
+      propertyPath: stomp
+      value: 
+      objectReference: {fileID: 1298036222}
     - target: {fileID: 4846496654505328572, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
       propertyPath: dFuel
@@ -31750,7 +31765,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 068106a45e8a96f43aee8ea8c726e293, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.113
+  m_Volume: 0.126
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -11,6 +11,5 @@ public class FuelMeter : MonoBehaviour
     void Update()
     {
         fillSlider.value = ((float) fireBreathing.fuel) / fireBreathing.maxFuel;
-        print(((float) fireBreathing.fuel) / fireBreathing.maxFuel);
     }
 }

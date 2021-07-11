@@ -272,6 +272,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1502323896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8500907593607215228, guid: b66ada19705650542a0a4385fce6d5b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638474101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1502323897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502323896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c091cfccf7bac449556f4a41a76a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1502323898}
+--- !u!114 &1502323898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638474101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502323896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1638474101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
+      propertyPath: m_Text
+      value: 'SCORE:'
       objectReference: {fileID: 0}
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Avery/MainMenu.unity
+    guid: 181cd0c311757db47a24d28f69412849
+  - enabled: 1
+    path: Assets/Scenes/Prototype.unity
+    guid: 5ef35fb4c58f57b49b27e91aaf41ad5d
   m_configObjects: {}

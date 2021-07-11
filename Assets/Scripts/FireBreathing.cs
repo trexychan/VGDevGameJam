@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBreathing : MonoBehaviour
 {
-    
+    public AudioSource breathsfx;
     public Transform breathStart;
     public float x, y, z;
     public GameObject flamePrefab;
@@ -36,7 +36,7 @@ public class FireBreathing : MonoBehaviour
     {
         while (true)
         {
-            
+            breathsfx.PlayOneShot(breathsfx.clip);
             Vector2 dir = breathStart.up + new Vector3(Random.Range(-maxSpread, maxSpread), Random.Range(-maxSpread, maxSpread), 0);
             GameObject flame = Instantiate(flamePrefab, breathStart.position, breathStart.rotation);
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();

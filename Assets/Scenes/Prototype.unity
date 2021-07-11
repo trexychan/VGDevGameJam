@@ -6017,8 +6017,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverScreenPrefab
       value: 
-      objectReference: {fileID: 5916150191447619957, guid: 24d140dc3e164b2418ca0ea3e82dd568,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4846496654505328569, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
       propertyPath: m_Name
@@ -6039,6 +6038,11 @@ PrefabInstance:
       propertyPath: dFuel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4846496654505328572, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
+        type: 3}
+      propertyPath: breathsfx
+      value: 
+      objectReference: {fileID: 14595794}
     - target: {fileID: 4846496654505328573, guid: 3a0fbd40c39a9ff4e969ed48160f3d68,
         type: 3}
       propertyPath: m_RootOrder
@@ -31746,7 +31750,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 068106a45e8a96f43aee8ea8c726e293, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.673
+  m_Volume: 0.113
   m_Pitch: 1
   Loop: 0
   Mute: 0

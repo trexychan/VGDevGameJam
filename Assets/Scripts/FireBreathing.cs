@@ -11,7 +11,10 @@ public class FireBreathing : MonoBehaviour
     public float maxSpread;
     public PlayerController player;
     public float fuel;
-    public float dFuel;
+    public float fuelRate = 5;
+    private float baseFuelRate;
+    public float fuelAcceleration = 5;
+    //public float dFuel;
     public float maxFuel;
     public float pow;
 
@@ -25,7 +28,8 @@ public class FireBreathing : MonoBehaviour
         x = breathStart.rotation.eulerAngles.x;
         y = breathStart.rotation.eulerAngles.y;
         z = breathStart.rotation.eulerAngles.z;
-        // StartCoroutine("CoolDown");
+        baseFuelRate = fuelRate;
+        StartCoroutine("CoolDown");
     }
 
     private IEnumerator Breathe()
@@ -38,28 +42,36 @@ public class FireBreathing : MonoBehaviour
             Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
             StartCoroutine(WaitToDespawnFlames(rb, flame));
             rb.AddForce(dir * flameForce, ForceMode2D.Impulse);
-            fuel -= Mathf.Pow(pow -= 0.1f, 1/2);
-            pow -= 0.1f;
-            if (pow <= 0)
-            {
-                pow = 0;
-            }
+            //fuel -= Mathf.Pow(pow -= 0.1f, 1/2);
+            //pow -= 0.1f;
+            fuel -= 1;
+            //if (pow <= 0)
+            //{
+            //    pow = 0;
+            //}
             dT += fireRateAcceleration;
-            yield return new WaitForSeconds(Mathf.Pow(dT / 2, 2));
+            //yield return new WaitForSeconds(Mathf.Pow(dT / 2, 2));
+            yield return new WaitForSeconds((Mathf.Pow(fuel - 100, 2) / 40000f)); // MAKE SURE MAX FUEL IS 100
         }
     }
     private IEnumerator CoolDown()
     {
-        if (fuel >= maxFuel)
-        {
-            fuel = maxFuel;
-        }
         while (fuel <= maxFuel)
         {
-            
-            fuel = fuel + Mathf.Pow(pow += 0.1f, 2);
+            if (fuel >= maxFuel)
+            {
+                fuel = maxFuel;
+                yield break;
+            }
+            else if (fuel < 0)
+            {
+                fuel = 0;
+            }
+            fuelRate += fuelAcceleration * Time.deltaTime;
+            fuel += fuelRate * Time.deltaTime;
+            //fuel = fuel + Mathf.Pow(pow += 0.1f, 2);
             dT -= fireRateAcceleration;
-            yield return new WaitForSeconds(cooldownRate);
+            yield return null;
         }
     }
 
@@ -78,6 +90,7 @@ public class FireBreathing : MonoBehaviour
             CameraShake.Shake(0.1f, 2f);
             ShootFire();
             player.speed = 2.5f;
+            fuelRate = baseFuelRate;
         }
         else if (Input.GetButtonUp("Fire1") || fuel <= 0)
         {

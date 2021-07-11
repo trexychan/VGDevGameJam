@@ -97,7 +97,8 @@ public class LionStructure : MonoBehaviour
         }
         lion.transform.position = t.position;
         lion.transform.rotation = t.rotation;
-        lion.spriteRenderer.color = Color.blue;
+        lion.animator.runtimeAnimatorController = lion.animatorControllersList[2];
+        // lion.spriteRenderer.color = Color.blue;
     }
 
     protected void DestroyStructure()

@@ -27,7 +27,8 @@ public class LionBomb : LionStructure
             {
                 foreach (Lion1 l1 in lions)
                 {
-                    l1.spriteRenderer.color = Color.red;
+                    l1.animator.runtimeAnimatorController = l1.animatorControllersList[1];
+                    // l1.spriteRenderer.color = Color.red;
                 }
             }
             if (fuse < 0)

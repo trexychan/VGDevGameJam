@@ -98,7 +98,8 @@ public class LionSpawner : MonoBehaviour
                 l = l1.gameObject;
                 l.SetActive(true);
                 inactiveLion1.RemoveAt(inactiveLion1.Count - 1);
-                l1.spriteRenderer.color = Color.white;
+                l1.animator.runtimeAnimatorController = l1.animatorControllersList[0];
+                // l1.spriteRenderer.color = Color.white;
             }
             else
             {

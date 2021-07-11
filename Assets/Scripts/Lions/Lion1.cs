@@ -14,7 +14,9 @@ public class Lion1 : MonoBehaviour
     private Vector3 avoidTargetVector = Vector3.zero;
     private Vector3 newDirection = Vector3.zero;
 
-    public SpriteRenderer spriteRenderer;
+    // public SpriteRenderer spriteRenderer;
+    public List<RuntimeAnimatorController> animatorControllersList;
+    public Animator animator;
 
     public enum MoveState
     {
@@ -22,7 +24,14 @@ public class Lion1 : MonoBehaviour
         Vibing,
         Structure,
     }
-
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        if (animator)
+        {
+            Debug.Log("Got Animator!!!!");
+        }
+    }
     public void Start()
     {
         moveState = MoveState.Vibing;
@@ -131,7 +140,8 @@ public class Lion1 : MonoBehaviour
     private IEnumerator SeekTarget()
     {
         moveState = MoveState.Seeking;
-        spriteRenderer.color = Color.red;
+        animator.runtimeAnimatorController = animatorControllersList[1];
+        // spriteRenderer.color = Color.red;
         Transform target = LionSpawner.GetInstance().target;
         
         // move to far enough away
@@ -178,7 +188,8 @@ public class Lion1 : MonoBehaviour
 
 
         moveState = MoveState.Vibing;
-        spriteRenderer.color = Color.white;
+        animator.runtimeAnimatorController = animatorControllersList[0];
+        // spriteRenderer.color = Color.white;
     }
 
     private void RotateTowards(Vector3 targetDirection)

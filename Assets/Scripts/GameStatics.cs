@@ -14,7 +14,14 @@ public static class GameStatics
 
     public static void GoToGameLevel()
     {
+        PlayerPrefs.SetInt("Score",0);
         SceneManager.LoadScene(1);
+    }
+
+    public static void GoToGameOverScreen()
+    {
+        PlayerPrefs.SetInt("Score",LionSpawner.GetScore());
+        SceneManager.LoadScene(2);
     }
 
     public static void ExitGame()

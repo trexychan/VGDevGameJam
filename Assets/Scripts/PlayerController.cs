@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+    public AudioSource stomp;
     public Rigidbody2D rb;
     public Camera c;
     public Vector2 moveDir, mousePos;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 newPosition = rb.position + moveDir * speed * Time.fixedDeltaTime;
+        
         if (newPosition.y > levelBounds.x)
         {
             newPosition.y = levelBounds.x;

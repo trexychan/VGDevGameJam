@@ -14,6 +14,23 @@ public class LionStructure : MonoBehaviour
     protected List<Lion1> lions = new List<Lion1>();
     public Collider2D hitbox;
 
+    private void Update()
+    {
+        foreach (Lion1 l1 in lions)
+        {
+            if (!l1.gameObject.activeInHierarchy)
+            {
+                currentLions -= 1;
+                lions.Remove(l1);
+                l1.transform.parent = transform.parent;
+
+                if (1.0 * currentLions / lionsNeeded < 0.5f)
+                {
+                    DestroyStructure();
+                }
+            }
+        }
+    }
 
     protected void SetPosition(Vector3 pos)
     {
@@ -49,6 +66,26 @@ public class LionStructure : MonoBehaviour
             }
         }
         
+    }
+
+    public void RemoveDeletedLion(Lion1 lion)
+    {
+        lions.Remove(lion);
+        lion.transform.parent = transform.parent;
+        currentLions -= 1;
+
+        if (!isComplete)
+        {
+            lionsNeeded += 1;
+            lionPositionsRemaining.Add(lion.transform);
+        }
+        else
+        {
+            if (1.0 * currentLions / lionsNeeded < 0.5f)
+            {
+                DestroyStructure();
+            }
+        }
     }
 
     public void AddLion(Lion1 lion)

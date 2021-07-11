@@ -108,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_Text
-      value: 'Score: 12'
+      value: 'Score: 4'
       objectReference: {fileID: 0}
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
@@ -189,7 +189,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6836268802709921502, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
     - target: {fileID: 8420740152845379491, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -275,7 +276,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6836268802709921502, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
     - target: {fileID: 8587319227133076566, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState

@@ -150,9 +150,10 @@ MonoBehaviour:
     type: 3}
   maxSpread: 0.2
   player: {fileID: 4846496654505328571}
-  fuel: 0
-  dFuel: 0
-  maxFuel: 1000
+  fuel: 50
+  fuelRate: 5
+  fuelAcceleration: 5
+  maxFuel: 100
   pow: 0
   flameForce: 10
   dT: 0.1
@@ -172,7 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   vulnerableRadius: 1
-  damagePerLionPerFrame: 0.01
+  damagePerLionPerFrame: 0.1
+  damagePerLionBulletPerFrame: 0.2
   gameOverScreenPrefab: {fileID: 3617012068906756261, guid: b66ada19705650542a0a4385fce6d5b3,
     type: 3}
   gameOverScreenRoot: {fileID: 0}

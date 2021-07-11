@@ -7,6 +7,7 @@ public class DragonManager : MonoBehaviour
     public float health = 100;
     public float vulnerableRadius = 5; // radius in which dragon takes damage from lions
     public float damagePerLionPerFrame = 0.01f;
+    public float damagePerLionBulletPerFrame = 0.05f;
     public GameObject gameOverScreenPrefab;
     public Transform gameOverScreenRoot;
 
@@ -14,7 +15,7 @@ public class DragonManager : MonoBehaviour
 
     void Update()
     {
-        TakeDamage(CheckForLions() * damagePerLionPerFrame);
+        TakeDamage(CheckForLions());
 
         if (health <= 0)
         {
@@ -24,9 +25,10 @@ public class DragonManager : MonoBehaviour
         }
     }
 
-    private int CheckForLions()
+    private float CheckForLions()
     {
         int numLions = 0;
+        int numLionBullets = 0;
         
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, vulnerableRadius, LayerMask.GetMask("Lion")); // no view cone
         foreach (Collider2D hit in hits)
@@ -36,8 +38,16 @@ public class DragonManager : MonoBehaviour
             {
                 numLions++;
             }
+            else
+            {
+                LionBullet other2 = hit.GetComponent<LionBullet>();
+                if (other2 != null)
+                {
+                    numLionBullets++;
+                }
+            }
         }
 
-        return numLions;
+        return numLions * damagePerLionPerFrame + numLionBullets * damagePerLionBulletPerFrame;
     }
 }

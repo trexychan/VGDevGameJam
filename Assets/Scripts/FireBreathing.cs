@@ -51,6 +51,7 @@ public class FireBreathing : MonoBehaviour
             //}
             dT += fireRateAcceleration;
             //yield return new WaitForSeconds(Mathf.Pow(dT / 2, 2));
+            CameraShake.Shake(0.25f, 3f * (fuel / 100));
             yield return new WaitForSeconds((Mathf.Pow(fuel - 100, 2) / 40000f)); // MAKE SURE MAX FUEL IS 100
         }
     }
@@ -87,7 +88,6 @@ public class FireBreathing : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && fuel > 0)
         {
-            CameraShake.Shake(0.1f, 2f);
             ShootFire();
             player.speed = 2.5f;
             fuelRate = baseFuelRate;

@@ -6,6 +6,7 @@ public class LionManager : MonoBehaviour
 {
     public int health;
     public SpriteRenderer spriteRenderer;
+    public bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,9 @@ public class LionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (alive && health <= 0)
         {
+            alive = false;
             LionSpawner.RemoveLion1(GetComponent<Lion1>());
         }
     }
@@ -26,7 +28,7 @@ public class LionManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Flame flame = collider.GetComponent<Flame>();
-        if (flame != null)
+        if (alive && flame != null)
         {
             Debug.Log("LION HIT BY FIRE");
             StartCoroutine(BurnLion());

@@ -15,10 +15,10 @@ public class GameOverScreen : MonoBehaviour
     }
     public void RestartButton()
     {
-        SceneManager.LoadScene("Prototype");
+        GameStatics.GoToGameLevel();
     }
     public void MenuButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        GameStatics.GoToMainMenu();
     }
 }

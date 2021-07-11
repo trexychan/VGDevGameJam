@@ -7,6 +7,8 @@ public class DragonManager : MonoBehaviour
     public float health = 100;
     public float vulnerableRadius = 5; // radius in which dragon takes damage from lions
     public float damagePerLionPerFrame = 0.01f;
+    public GameObject gameOverScreenPrefab;
+    public Transform gameOverScreenRoot;
 
     public void TakeDamage(float amount) { health -= amount;}
 
@@ -17,6 +19,8 @@ public class DragonManager : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("GAME OVER!: Dragon's health below or equal to 0");
+            Time.timeScale = 0f;
+            Instantiate(gameOverScreenPrefab, gameOverScreenRoot);
         }
     }
 

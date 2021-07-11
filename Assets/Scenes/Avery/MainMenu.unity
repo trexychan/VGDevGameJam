@@ -809,6 +809,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -244.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8449529157205890807, guid: 8b23300ee61505a4987af8ff848a5da3,
+        type: 3}
+      propertyPath: m_Text
+      value: " -Ethan Yu: artist\r\n -Aneet Nadella: programming/UI\r\n -Avery Greer:
+        programming/UI\r\n -Tamjid Hossain: programming/UI\r\n -Daniel Carr: programming
+        lions AI"
+      objectReference: {fileID: 0}
     - target: {fileID: 8449529157326555399, guid: 8b23300ee61505a4987af8ff848a5da3,
         type: 3}
       propertyPath: m_AnchorMax.x

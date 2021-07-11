@@ -45,6 +45,9 @@ public class CameraShake : MonoBehaviour
 
             //transform.localPosition = _originalPos + Random.insideUnitSphere * amount;
 
+            vCam.transform.position = new Vector3(0, 0, -10); // FOR LION PROJECT
+            vCam.transform.rotation = Quaternion.identity;
+
             curIntensity = Mathf.Lerp(amount, 0, curTime / duration);
             perlin.m_AmplitudeGain = curIntensity;
 
@@ -54,5 +57,8 @@ public class CameraShake : MonoBehaviour
         }
 
         perlin.m_AmplitudeGain = 0;
+
+        vCam.transform.position = new Vector3(0, 0, -10); // FOR LION PROJECT
+        vCam.transform.rotation = Quaternion.identity;
     }
 }

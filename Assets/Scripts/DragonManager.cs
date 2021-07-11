@@ -50,6 +50,10 @@ public class DragonManager : MonoBehaviour
             }
         }
 
+        if (numLions + numLionBullets > 0)
+        {
+            CameraShake.Shake(0.15f, 3f);
+        }
         return numLions * damagePerLionPerFrame + numLionBullets * damagePerLionBulletPerFrame;
     }
 }

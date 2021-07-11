@@ -34,6 +34,8 @@ public class LionSpawner : MonoBehaviour
     {
         // lazy
         _instance = this;
+
+        totalKills = 0;
     }
 
     private void Start()

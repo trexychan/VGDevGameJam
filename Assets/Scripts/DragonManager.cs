@@ -20,8 +20,9 @@ public class DragonManager : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("GAME OVER!: Dragon's health below or equal to 0");
-            Time.timeScale = 0f;
-            Instantiate(gameOverScreenPrefab, gameOverScreenRoot);
+            //Time.timeScale = 0f;
+            //Instantiate(gameOverScreenPrefab, gameOverScreenRoot);
+            GameStatics.GoToGameOverScreen();
         }
     }
 

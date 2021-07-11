@@ -106,6 +106,9 @@ MonoBehaviour:
   c: {fileID: 0}
   moveDir: {x: 0, y: 0}
   mousePos: {x: 0, y: 0}
+  levelBounds: {x: 4, y: 8, z: -4, w: -8}
+  inputSmoothness: 0.1
+  inputSmoothingTolerance: 0.01
 --- !u!50 &4846496654505328568
 Rigidbody2D:
   serializedVersion: 4
@@ -125,7 +128,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &4846496654505328572
 MonoBehaviour:
@@ -168,8 +171,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  vulnerableRadius: 2
+  vulnerableRadius: 1
   damagePerLionPerFrame: 0.01
+  gameOverScreenPrefab: {fileID: 3617012068906756261, guid: b66ada19705650542a0a4385fce6d5b3,
+    type: 3}
+  gameOverScreenRoot: {fileID: 0}
 --- !u!95 &1279830255691182886
 Animator:
   serializedVersion: 3

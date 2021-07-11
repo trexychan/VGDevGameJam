@@ -7,10 +7,16 @@ public class MainMenuHandler : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        GameStatics.GoToGameLevel();
     }
+
+    public void OpenCredits()
+    {
+
+    }
+
     public void QuitGame()
     {
-        Application.Quit();
+        GameStatics.ExitGame();
     }
 }

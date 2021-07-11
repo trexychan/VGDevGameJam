@@ -107,6 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   spriteRenderer: {fileID: 0}
+  steakParticles: {fileID: 4891596648287502505, guid: 92342299e4885764aa2141d811dcb08d,
+    type: 3}
   alive: 1
 --- !u!95 &9207821382022775062
 Animator:

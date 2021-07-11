@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_Text
-      value: 'Score: 4'
+      value: 'Score: 1381'
       objectReference: {fileID: 0}
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}

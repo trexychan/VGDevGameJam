@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text pointsText;
+    public Text scoreText;
     public void Setup(int score)
     {
         gameObject.SetActive(true);
-        pointsText.text = "Score: " + score.ToString();
+        score = LionSpawner.GetScore();
+        scoreText.text = "Score: " + score.ToString();
     }
     public void RestartButton()
     {
-
+        SceneManager.LoadScene("Prototype");
     }
     public void MenuButton()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 }

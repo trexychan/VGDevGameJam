@@ -574,7 +574,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 790.748, y: 312.2}
+  m_SizeDelta: {x: 1671.3, y: 350.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8449529157205890792
 CanvasRenderer:
@@ -618,8 +618,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: " -Ethan Yu: artist\r\n -Aneet Nadella: programming/UI\r\n -Avery Greer:
-    programming/UI\r\n -Tamjid Hossain: programming/UI\r\n -Daniel Carr: lion AI
-    programming"
+    programming/UI\r\n -Tamjid Hossain: programming/UI\r\n -Daniel Carr: programming"
 --- !u!1 &8449529157326555398
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +799,12 @@ MonoBehaviour:
     Icon: https://www.clipartkey.com/view/hbTohb_image-transparent-fire-by-lourdes-javier-photography-fire/
 
     -Lion
-    Kill Score Icon: http://www.clker.com/clipart-568253.html'
+    Kill Score Icon: http://www.clker.com/clipart-568253.html
+
+    -Battle Music:
+    https://www.youtube.com/watch?v=9gBTKiVqprE
+
+'
 --- !u!1 &8449529157501465794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1034,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8449529157042806055}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.66449517
+  m_Size: 0.6455352
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

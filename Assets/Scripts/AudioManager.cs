@@ -18,8 +18,16 @@ public class AudioManager : MonoBehaviour
         return _instance;
     }
 
+    void Start()
+    {
+        float masterVolume = PlayerPrefs.GetFloat("MasterVolume",1f);
+        ChangeVolume(masterVolume);
+    }
+
     public void ChangeVolume(float newVolume)
     {
+        PlayerPrefs.SetFloat("MasterVolume", newVolume);
+
         foreach (AudioSource source in audioSources)
         {
             source.volume = newVolume;

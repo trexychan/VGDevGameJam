@@ -22,6 +22,10 @@ public class PauseMenuManager : MonoBehaviour
         resumeButton.onClick.AddListener(ResumeGame);
         quitButton.onClick.AddListener(QuitToMainMenu);
         volumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
+
+        // start master volume at right setting
+        float masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        volumeSlider.value = masterVolume;
     }
 
     void Update()

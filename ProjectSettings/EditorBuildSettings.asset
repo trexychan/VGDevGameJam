@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype.unity
     guid: 5ef35fb4c58f57b49b27e91aaf41ad5d
+  - enabled: 1
+    path: Assets/Scenes/Tamjid/GameOverScreen.unity
+    guid: f0bf6629ab9ff0849871a2d957f45298
   m_configObjects: {}

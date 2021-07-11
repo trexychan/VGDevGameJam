@@ -39,6 +39,7 @@ public class LionSpawner : MonoBehaviour
 
         baseTargetLionNumber = targetLionNumber;
         baseTargetIncreaseRate = targetIncreaseRate;
+        totalKills = 0;
     }
 
     private void Start()

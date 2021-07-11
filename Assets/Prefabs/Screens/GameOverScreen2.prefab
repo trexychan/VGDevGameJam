@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1638474104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537121884075511566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c091cfccf7bac449556f4a41a76a7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
 --- !u!114 &1502323897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +49,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 353014107163071740, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 608286750514218051, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
@@ -143,10 +135,15 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 7064421986776666390, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_Text
-      value: 'SCORE:'
+      value: 'Score: 1381'
       objectReference: {fileID: 0}
     - target: {fileID: 8417342212615968343, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
@@ -232,7 +229,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1638474104}
+      objectReference: {fileID: 6836268802709921502, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
     - target: {fileID: 8420740152845379491, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -328,7 +326,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1638474104}
+      objectReference: {fileID: 6836268802709921502, guid: b66ada19705650542a0a4385fce6d5b3,
+        type: 3}
     - target: {fileID: 8587319227133076566, guid: b66ada19705650542a0a4385fce6d5b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -456,12 +455,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b66ada19705650542a0a4385fce6d5b3, type: 3}
---- !u!1 &4537121884075511566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3617012068906756261, guid: b66ada19705650542a0a4385fce6d5b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 920191179063306155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8735971082842202071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8500907593607215228, guid: b66ada19705650542a0a4385fce6d5b3,

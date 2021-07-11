@@ -71,7 +71,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 504.641, y: 60}
+  m_SizeDelta: {x: 1000, y: 71.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8449529156465907668
 CanvasRenderer:
@@ -150,7 +150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 73.26001, y: -43.2}
+  m_AnchoredPosition: {x: 73.26001, y: -43.19995}
   m_SizeDelta: {x: 191.23596, y: 103.099976}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8449529156603628065
@@ -433,10 +433,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1959.3, y: 1140.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8449529157160674387
 CanvasRenderer:
@@ -493,7 +493,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 60}
+  m_SizeDelta: {x: 1000, y: 67.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8449529157164571520
 CanvasRenderer:
@@ -788,11 +788,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " -Boid Algorithm: Sebastian Lague's Coding Adventure: Boids     (https://www.youtube.com/watch?v=bqtqltqcQhw)\n
-    -Volume Slider Handle: https://www.shutterstock.com/image-vector/dragon-head-front-1176935824\n
-    -Health Icon: https://www.pinclipart.com/pindetail/hRbbxR_anatomy-vector-human-heart-clipart-transparent-stock-realistic/\n
-    -Fuel Icon: https://www.clipartkey.com/view/hbTohb_image-transparent-fire-by-lourdes-javier-photography-fire/\n
-    -Lion Kill Score Icon: http://www.clker.com/clipart-568253.html"
+  m_Text: ' -Boid Algorithm: Sebastian Lague''s Coding Adventure: Boids     (https://www.youtube.com/watch?v=bqtqltqcQhw)
+
+    -Volume
+    Slider Handle: https://www.shutterstock.com/image-vector/dragon-head-front-1176935824
+
+    -Health
+    Icon: https://www.pinclipart.com/pindetail/hRbbxR_anatomy-vector-human-heart-clipart-transparent-stock-realistic/
+
+    -Fuel
+    Icon: https://www.clipartkey.com/view/hbTohb_image-transparent-fire-by-lourdes-javier-photography-fire/
+
+    -Lion
+    Kill Score Icon: http://www.clker.com/clipart-568253.html'
 --- !u!1 &8449529157501465794
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,11 +836,11 @@ RectTransform:
   m_Father: {fileID: 8449529157160674385}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.996, y: -51.017}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.000030517578, y: -140}
   m_SizeDelta: {x: 1754.174, y: 867.638}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8449529157501465798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -884,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 8449529157813658364}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -1022,7 +1030,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8449529157042806055}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.67441744
+  m_Size: 0.66449517
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1143,7 +1151,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -54.1}
-  m_SizeDelta: {x: 851.852, y: 76.86}
+  m_SizeDelta: {x: 851.852, y: 85.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8449529158015833740
 CanvasRenderer:
